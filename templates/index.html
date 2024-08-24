@@ -46,10 +46,17 @@
 
     async function save_money(params) {
         const accounts = await web3.eth.requestAccounts();
-        console.log(accounts[0])
+        console.log(accounts[0]);
+        const amount_d = document.getElementById("amount_deposited").value;
+        console.log(amount_d);
+        await contract.methods._m(amount_d).send({from: accounts[0]})
     }
 
     async function view_money(params) {
+        const store_amount = await contract.methods.view_m(amount_d).call();
+        console.log(stored_amount);
+        document.getElementById("display_amount").innerText = stored_amount;
+        
         
     }
 
