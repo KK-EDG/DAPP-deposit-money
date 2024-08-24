@@ -10,8 +10,7 @@
 <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
 <script>
     const contract_address="0x98c272d82a146a23fe6e5ceab8561454d7822369"
-    const contract_abi = [
-    
+    const contract_abi = [[
 	{
 		"inputs": [
 			{
@@ -38,6 +37,7 @@
 		"stateMutability": "view",
 		"type": "function"
 	}
+]
 
     ]
 
@@ -56,7 +56,7 @@
         const store_amount = await contract.methods.view_m(amount_d).call();
         console.log(stored_amount);
         document.getElementById("display_amount").innerText = stored_amount;
-        
+
         
     }
 
